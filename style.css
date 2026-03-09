@@ -1,0 +1,81 @@
+*{
+    font-family: 'Segoe UI', sans-serif;
+    box-sizing: border-box;
+    transition: all .3s linear;
+}
+
+:root{
+    --main-color: #8e8509;
+    --bgcolor: #f3f7dc;
+    --bgcolor-2: #fff;
+    --textcolor: #333;
+}
+
+body{
+    background: var(--bgcolor);
+    color: var(--textcolor);
+    margin: 0;
+}
+
+header{
+    background: var(--main-color);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 .2rem 1rem #00000033;
+    position: sticky;
+    top: 0;
+}
+
+header img{
+    height: 2rem;
+    margin-right: .5rem;
+}
+
+h1{
+    font-size: 2rem;
+    margin: 0;
+}
+
+h2{
+    color: var(--main-color);
+    border-left: .4rem solid var(--main-color);
+    padding-left: .5rem;
+}
+
+main{
+    max-width: 62rem; /* 1000px */
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+section{
+    background: var(--bgcolor-2);
+    border-radius: .5rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 .2rem 1rem #00000033;
+}
+
+code{
+    background: #f4f4f4;
+    color: var(--main-color);
+    padding: .2rem .5rem;
+    border-radius: .3rem;
+}
+
+button{
+    background: var(--main-color);
+    color: #fff;
+    border: none;
+    border-radius: .5rem;
+    padding: .6rem 1.2rem;
+    font-size: 1rem;
+    margin-top: .5rem;
+}
+
+button:hover{
+    cursor: pointer;
+    filter: brightness(120%);
+    transform: translateY(.2rem);
+}
