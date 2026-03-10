@@ -194,6 +194,7 @@ const toDoList = document.querySelector("#todo-list")
 
 let todos = []
 
+// Render
 function renderTodos(){
     toDoList.innerHTML = ""
     todos.forEach((todo, index) => {
