@@ -192,7 +192,12 @@ const btnAddTodo = document.querySelector("#btn-add-todo")
 const todoInput = document.querySelector("#todo-input")
 const toDoList = document.querySelector("#todo-list")
 
-let todos = []
+let todos = JSON.parse(localStorage.getItem("todos")) || []
+
+// Save funkcija
+function saveTodos(){
+    localStorage.setItem("todos", JSON.stringify(todos))
+}
 
 // Render
 function renderTodos(){
@@ -200,6 +205,25 @@ function renderTodos(){
     todos.forEach((todo, index) => {
         const li = document.createElement("li")
         li.textContent = todo.text
+        if(todo.done) li.classList.add("done")
+
+        li.addEventListener("click", () =>{
+            todos[index].done = !todos[index].done
+            saveTodos()
+            renderTodos()
+        })
+
+        const delBtn = document.createElement("button")
+        delBtn.textContent = "Dzēst"
+        delBtn.addEventListener("click", () =>{
+
+        todos.splice(index, 1);
+
+            saveTodos()
+            renderTodos()
+        })
+
+        li.appendChild(delBtn)
         toDoList.appendChild(li)
     })
 }
@@ -211,4 +235,13 @@ btnAddTodo.addEventListener("click", () => {
     todos.push({text, done: false})
 
     renderTodos()
+    saveTodos()
+
+    todoInput.value = ""
 })
+
+todoInput.addEventListener("keypress", (e) =>{
+    if(e.key === "Enter") btnAddTodo.click()
+})
+
+renderTodos()
