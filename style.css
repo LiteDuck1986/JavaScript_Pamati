@@ -134,3 +134,34 @@ input, .checkbox-2{
     gap: 1rem;
     margin: 1rem 0;
 }
+
+.todo-list{
+    list-style: none;
+    padding-left: 0;
+}
+
+.todo-list li{
+    background: var(--bgcolor);
+    padding: .5rem;
+    margin: .5rem;
+    border-radius: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.todo-list li:hover{
+    filter: brightness(90%);
+}
+
+.todo-list button{
+    margin: 0;
+    font-size: .8rem;
+}
+
+.todo-list li.done{
+    color: #666;
+    background: #aaaaaa33;
+    text-decoration: line-through;
+}

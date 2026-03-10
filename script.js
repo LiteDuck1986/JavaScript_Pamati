@@ -186,3 +186,28 @@ window.addEventListener("scroll", () =>{
         eventOut.textContent = "Lapa vairs netiek ritināta"
     }, 500)
 })
+
+// 10. sekcija:
+const btnAddTodo = document.querySelector("#btn-add-todo")
+const todoInput = document.querySelector("#todo-input")
+const toDoList = document.querySelector("#todo-list")
+
+let todos = []
+
+function renderTodos(){
+    toDoList.innerHTML = ""
+    todos.forEach((todo, index) => {
+        const li = document.createElement("li")
+        li.textContent = todo.text
+        toDoList.appendChild(li)
+    })
+}
+
+btnAddTodo.addEventListener("click", () => {
+    const text = todoInput.value
+    if (!text) return
+
+    todos.push({text, done: false})
+
+    renderTodos()
+})
