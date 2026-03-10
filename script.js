@@ -216,8 +216,8 @@ function renderTodos(){
         const delBtn = document.createElement("button")
         delBtn.textContent = "Dzēst"
         delBtn.addEventListener("click", () =>{
-
-        todos.splice(index, 1);
+            e.stopPropagation()
+            todos.splice(index, 1);
 
             saveTodos()
             renderTodos()
