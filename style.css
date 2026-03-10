@@ -109,3 +109,28 @@ input, .checkbox-2{
 .checkbox-2 input{
     width: 1rem;
 }
+
+.box{
+    width: 10rem;
+    height: 5rem;
+    background: var(--bgcolor);
+    box-shadow: inset 0 0 1rem #00000033;
+    color: var(--textcolor);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+    margin-top: .5rem;
+}
+
+.box:hover{
+    transform: scale(105%);
+    filter: brightness(90%);
+}
+
+.event-container{
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
