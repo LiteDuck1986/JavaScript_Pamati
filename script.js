@@ -251,6 +251,11 @@ renderTodos()
 const themeToggle = document.querySelector("#themeToggle")
 const body = document.body
 
+if(localStorage.getItem("theme") === "dark"){
+    body.classList.add("dark-mode")
+    themeToggle.textContent = "Gaišais režīms"
+}
+
 themeToggle.addEventListener("click", () => {
     body.classList.toggle("dark-mode")
     const isDark = body.classList.contains("dark-mode")
