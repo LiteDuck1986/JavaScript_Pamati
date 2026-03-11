@@ -215,7 +215,7 @@ function renderTodos(){
 
         const delBtn = document.createElement("button")
         delBtn.textContent = "Dzēst"
-        delBtn.addEventListener("click", () =>{
+        delBtn.addEventListener("click", (e) =>{
             e.stopPropagation()
             todos.splice(index, 1);
 
@@ -245,3 +245,12 @@ todoInput.addEventListener("keypress", (e) =>{
 })
 
 renderTodos()
+
+
+// Tēmas pārslēgšana (dark / light mode):
+const themeToggle = document.querySelector("#themeToggle")
+const body = document.body
+
+themeToggle.addEventListener("click", () => {
+    body.classList.toggle("dark-mode")
+})
