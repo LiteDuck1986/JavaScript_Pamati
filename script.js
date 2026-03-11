@@ -255,4 +255,6 @@ themeToggle.addEventListener("click", () => {
     body.classList.toggle("dark-mode")
     const isDark = body.classList.contains("dark-mode")
     themeToggle.textContent = isDark ? "Gaišais režīms" : "Tumšais režīms"
+
+    localStorage.setItem("theme", isDark ? "dark" : "light")
 })
